@@ -7,11 +7,18 @@ class Node:
     def __init__(self, value=None):
         self.value = value
         self.next = None
+        
+    def __str__(self):
+        return f'Value: {self.value}\nNext: {self.next}'
+
+    def __repr__(self):
+        return f'Value: {self.value}\nNext: {self.next}'
 
 
 class NodeStack:
     """
-    An object for storing a set of node objects. Data is accessed, inserted, and deleted from one end of the stack.
+    A simple stack object for storing a set of node objects. Data is accessed, inserted, and deleted from one end of the 
+    stack uni-directionally.
     """
     def __init__(self):
         self.head = None
