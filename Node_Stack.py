@@ -12,7 +12,8 @@ class Node:
         return f'Value: {self.value}\nNext: {self.next}'
 
     def __repr__(self):
-        return f'Value: {self.value}\nNext: {self.next}'
+        return f'Value: {self.value}\
+        Next: {self.next}'
 
 
 class NodeStack:
@@ -25,7 +26,11 @@ class NodeStack:
         self.length = 0
 
     def __str__(self):
-        return f'Head: {self.head.value}\nLength: {self.length}'
+        if self.length > 0:
+            return f'Head: {self.head.value}\nLength: {self.length}'
+        
+        else:
+            return 'Empty'
 
     def __repr__(self):
         contents = []
@@ -35,7 +40,8 @@ class NodeStack:
                 contents.append(curr_node.value)
                 curr_node = curr_node.next
 
-            return f'Head -> {str(contents)}\nLength: {self.length}'
+            return f'Head -> {str(contents)}\
+            Length: {self.length}'
 
         else:
             return 'Empty'
