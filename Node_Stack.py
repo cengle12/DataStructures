@@ -55,6 +55,10 @@ class NodeStack:
             return self.length == 0
 
     def push(self, new_value):
+        """
+        Adds a node object containing the user-specified value to the Stack at the head position. Increments length of the stack by one.
+        :param new_value: Value contained within node that is being stored in the stack.
+        """
         new_node = Node(new_value)  # creates new new to add onto stack
         if self.isEmpty():  # if it's empty we only need to update the head
             self.head = new_node
@@ -64,12 +68,20 @@ class NodeStack:
         self.length += 1
 
     def peek(self):
+        """
+        Looks at the value contained within the node on top of the stack without removing it.
+        :return: Value contained within node on top of the stack.
+        """
         if not self.isEmpty():
             return self.head.value
         else:
             return None
 
     def pop(self):
+        """
+        Removes node object from the top of the stack and returns the value contained within it.
+        :return: Value contained within node on top of the stack.
+        """
         if not self.isEmpty():
             data = self.head.value
             self.head = self.head.next  # changes head to node second from top
